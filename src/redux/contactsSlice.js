@@ -1,3 +1,4 @@
+// В contactsSlice.js
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 
 // MockAPI URL
@@ -76,6 +77,14 @@ const contactsSlice = createSlice({
 // Selector for contacts
 export const selectContacts = (state) => state.contacts.items;
 export const selectFilter = (state) => state.contacts.filter; // Селектор для фильтра
+
+// Селектор для получения отфильтрованных контактов
+export const selectFilteredContacts = (state) => {
+  const filter = state.contacts.filter.toLowerCase();
+  return state.contacts.items.filter(contact =>
+    contact.name.toLowerCase().includes(filter) // Фильтруем по имени
+  );
+};
 
 // Export actions
 export const { setFilter } = contactsSlice.actions;

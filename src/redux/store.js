@@ -1,26 +1,11 @@
 import { configureStore } from "@reduxjs/toolkit";
-import { persistStore, persistReducer } from "redux-persist";
-import storage from "redux-persist/lib/storage";
-import contactsReducer from "./contactsSlice";
+import contactsReducer from "./contactsSlice"; // Путь к вашему редьюсеру
 
-const persistConfig = {
-  key: "contacts",
-  storage,
-};
-
-const persistedReducer = persistReducer(persistConfig, contactsReducer);
-
+// Создаем store
 const store = configureStore({
   reducer: {
-    contacts: persistedReducer,
+    contacts: contactsReducer,
   },
-  middleware: (getDefaultMiddleware) =>
-    getDefaultMiddleware({
-      serializableCheck: {
-        ignoredActions: ["persist/PERSIST", "persist/REHYDRATE", "persist/REGISTER"],
-      },
-    }),
 });
 
-export const persistor = persistStore(store);
-export { store };
+export { store }; // Экспортируем store как именованный экспорт
