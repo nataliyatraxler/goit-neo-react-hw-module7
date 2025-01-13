@@ -1,0 +1,34 @@
+/* SearchBox.module.css */
+
+.searchInput {
+    width: 300px;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    outline: none;
+    box-sizing: border-box;
+}
+
+.searchInput::placeholder {
+    color: #aaa;
+}
+
+.searchInput:focus {
+    border-color: #4caf50;
+    box-shadow: 0 0 5px rgba(76, 175, 80, 0.5);
+}
+
+.searchInput-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.searchInput-label {
+    font-size: 16px;
+    margin-right: 10px;
+}

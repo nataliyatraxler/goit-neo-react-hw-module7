@@ -1,0 +1,57 @@
+/* ContactList.module.css */
+
+.list {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.contactCard {
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    padding: 15px;
+    border-radius: 5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.contactInfo {
+    display: flex;
+    align-items: center;
+}
+
+.contactInfo p {
+    margin: 0;
+    font-size: 16px;
+    margin-left: 8px;
+}
+
+.icon {
+    font-size: 18px;
+}
+
+.deleteButton {
+    background-color: #ff4d4d;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s;
+}
+
+.deleteButton:hover {
+    background-color: #ff1a1a;
+}
+
+/* Для добавления отступов в верхнюю часть списка, если нужно */
+.listWrapper {
+    margin-top: 20px;
+    padding: 10px;
+}
